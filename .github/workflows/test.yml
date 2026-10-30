@@ -26,7 +26,7 @@ jobs:
 
       - name: Run API tests
         run: 
-          pytest -m pytest -v testAction.py #runs the test file        
+          python -m pytest -v testAction.py #runs the test file    
 
 
 
