@@ -1,0 +1,33 @@
+name: Test Flask API
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Repo Code
+        uses: actions/checkout@v7 # To Download the code
+
+      - name: Set up Python 
+        uses: actions/setup-python@v7 # setups python
+        with:
+          python-version: 3.11 
+        
+      - name: Install Dependencies
+        run:
+          pip install -r requirements.txt
+
+      - name: Run API tests
+        run: 
+          pytest -m pytest -v testAction.py #runs the test file        
+
+
+
+
